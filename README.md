@@ -1,6 +1,7 @@
 # Træfik with a consul using key/value
 
-With these settings you can start a *load balancer* using **traefik** and **consul**.
+With these settings you can start a *load balancer* using **traefik** and **consul** as the *configuration server*.
+
 Copy this repository into the "/ opt /" directory to be necessary to change the directories in the configuration scripts. (if you feel free to do so without any problem). You need to change some configuration files for the server to come up in your environment. 
 
 ## Consul files
@@ -73,3 +74,12 @@ In this file, you only need to change the contents of the ***endpoint*** key. Ch
     	
     [accessLog]
     	filePath = "/opt/traefik-consul/traefik/log/access.log"
+
+## Starting servers
+#### Consul
+
+    /opt/traefik-consul/bin/consul agent -config-dir /opt/traefik-consul/consul/ &
+
+#### Traefik
+
+    /opt/traefik-consul/bin/traefik -c /opt/traefik-consul/traefik_config.toml &
