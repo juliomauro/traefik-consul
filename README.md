@@ -78,8 +78,31 @@ In this file, you only need to change the contents of the ***endpoint*** key. Ch
 ## Starting servers
 #### Consul
 
-    /opt/traefik-consul/bin/consul agent -config-dir /opt/traefik-consul/consul/ &
+    /opt/traefik-consul/bin/consul agent -config-dir /opt/traefik-consul/consul/
 
 #### Traefik
 
-    /opt/traefik-consul/bin/traefik -c /opt/traefik-consul/traefik_config.toml &
+    /opt/traefik-consul/bin/traefik -c /opt/traefik-consul/traefik_config.toml
+
+## Adding Balancing Information
+
+We need to define what the sites and their respective backend servers will be to configure the balancer.
+
+
+#### Host: site01.oruam.cloud
+|IP      |TCP Port  |Health check Path |Health check Interval 
+|--------|----------|------------------|---------------------|
+|1.1.1.1 |80        |/_cat/health      |10s                  |
+|1.1.1.2 |80        |/_cat/health      |10s                  |
+|1.1.1.3 |80        |/_cat/health      |10s                  |
+|1.1.1.4 |80        |/_cat/health      |10s                  |
+
+#### Host: site02.oruam.cloud
+|IP      |TCP Port  |Health check Path |Health check Interval 
+|--------|----------|------------------|---------------------|
+|1.1.1.5 |80        |/_cat/health      |10s                  |
+|1.1.1.6 |80        |/_cat/health      |10s                  |
+|1.1.1.7 |80        |/_cat/health      |10s                  |
+|1.1.1.8 |80        |/_cat/health      |10s                  |
+
+
