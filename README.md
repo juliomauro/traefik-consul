@@ -1,7 +1,6 @@
 # Træfik with a consul using key/value
 
-With these settings you can start a *load balancer* using **traefik** and **consul** as the *configuration server*.
-
+With these settings you can start a *load balancer* using **traefik** and **consul**.
 Copy this repository into the "/ opt /" directory to be necessary to change the directories in the configuration scripts. (if you feel free to do so without any problem). You need to change some configuration files for the server to come up in your environment. 
 
 ## Consul files
