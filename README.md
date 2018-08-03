@@ -145,6 +145,7 @@ We need to define what the sites and their respective backend servers will be to
     consul kv put -http-addr=IP_CONSUL_SERVER:8500 traefik/frontends/site02/backend site02
     consul kv put -http-addr=IP_CONSUL_SERVER:8500 traefik/frontends/site02/routes/url/rule Host:site02.oruam.cloud
 
+
 *Check infos into consul*
 
     consul kv get -keys -http-addr=IP_CONSUL_SERVER:8500
@@ -152,3 +153,14 @@ We need to define what the sites and their respective backend servers will be to
     consul kv get -recurse -http-addr=IP_CONSUL_SERVER:8500
 
     consul kv get -recurse -detailed -http-addr=IP_CONSUL_SERVER:8500
+
+
+*Check infos Web interface*
+
+**Consul**
+http://IP_CONSUL_SERVER:8500
+![Screenshot](consul-SS.png)
+
+**Traefik**
+http://IP_CONSUL_SERVER:8080]
+![Screenshot](traefik-SS.png)
