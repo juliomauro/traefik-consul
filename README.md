@@ -112,9 +112,9 @@ We need to define what the sites and their respective backend servers will be to
 *Backend servers*
 
     consul kv put -http-addr=IP_CONSUL_SERVER:8500 traefik/backends/site01/servers/01/url http://1.1.1.1:80
-    consul kv put -http-addr=IP_CONSUL_SERVER:8500 traefik/backends/site01/servers/01/url http://1.1.1.2:80
-    consul kv put -http-addr=IP_CONSUL_SERVER:8500 traefik/backends/site01/servers/01/url http://1.1.1.3:80
-    consul kv put -http-addr=IP_CONSUL_SERVER:8500 traefik/backends/site01/servers/01/url http://1.1.1.4:80
+    consul kv put -http-addr=IP_CONSUL_SERVER:8500 traefik/backends/site01/servers/02/url http://1.1.1.2:80
+    consul kv put -http-addr=IP_CONSUL_SERVER:8500 traefik/backends/site01/servers/03/url http://1.1.1.3:80
+    consul kv put -http-addr=IP_CONSUL_SERVER:8500 traefik/backends/site01/servers/04/url http://1.1.1.4:80
 
 *Backend heath check*
 
@@ -131,9 +131,9 @@ We need to define what the sites and their respective backend servers will be to
 *Backend servers*
 
     consul kv put -http-addr=IP_CONSUL_SERVER:8500 traefik/backends/site02/servers/01/url http://1.1.1.5:80
-    consul kv put -http-addr=IP_CONSUL_SERVER:8500 traefik/backends/site02/servers/01/url http://1.1.1.6:80
-    consul kv put -http-addr=IP_CONSUL_SERVER:8500 traefik/backends/site02/servers/01/url http://1.1.1.7:80
-    consul kv put -http-addr=IP_CONSUL_SERVER:8500 traefik/backends/site02/servers/01/url http://1.1.1.8:80
+    consul kv put -http-addr=IP_CONSUL_SERVER:8500 traefik/backends/site02/servers/02/url http://1.1.1.6:80
+    consul kv put -http-addr=IP_CONSUL_SERVER:8500 traefik/backends/site02/servers/03/url http://1.1.1.7:80
+    consul kv put -http-addr=IP_CONSUL_SERVER:8500 traefik/backends/site02/servers/04/url http://1.1.1.8:80
 
 *Backend heath check*
 
@@ -144,3 +144,11 @@ We need to define what the sites and their respective backend servers will be to
 
     consul kv put -http-addr=IP_CONSUL_SERVER:8500 traefik/frontends/site02/backend site02
     consul kv put -http-addr=IP_CONSUL_SERVER:8500 traefik/frontends/site02/routes/url/rule Host:site02.oruam.cloud
+
+*Check infos into consul*
+
+    consul kv get -keys -http-addr=IP_CONSUL_SERVER:8500
+
+    consul kv get -recurse -http-addr=IP_CONSUL_SERVER:8500
+
+    consul kv get -recurse -detailed -http-addr=IP_CONSUL_SERVER:8500
