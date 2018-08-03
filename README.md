@@ -159,8 +159,14 @@ We need to define what the sites and their respective backend servers will be to
 
 **Consul**
 http://IP_CONSUL_SERVER:8500
-![Screenshot](consul-SS.png)
+![Screenshot](traefik-SS.png)
 
 **Traefik**
 http://IP_CONSUL_SERVER:8080]
-![Screenshot](traefik-SS.png)
+![Screenshot](consul-SS.png)
+
+**For more information about the products, visit:**
+
+https://www.consul.io/docs/
+
+https://docs.traefik.io/
