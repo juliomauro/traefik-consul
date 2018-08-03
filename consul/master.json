@@ -1,0 +1,6 @@
+{
+  "acl_datacenter":"CONSUL_NAME",
+  "acl_default_policy":"allow",
+  "acl_down_policy":"allow",
+  "acl_master_token":"398073a8-5091-4d9c-871a-bbbeb030d1f5" 
+}

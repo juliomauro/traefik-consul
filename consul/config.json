@@ -1,0 +1,13 @@
+{
+    "bootstrap": true,
+    "server": true,
+    "datacenter": "CONSUL_NAME",
+    "data_dir": "/opt/traefik-consul/consul/data",
+    "encrypt": "n8UUwpbNspNmVo3uAH01uq==",
+    "log_level": "INFO",
+    "enable_syslog": true,
+    "node_name": "NODE_NAME01",
+    "addresses": {"http": "IP_CONSUL_SERVER" },
+    "bind_addr": "IP_CONSUL_SERVER",
+    "ui": true
+}

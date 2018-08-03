@@ -1,0 +1,25 @@
+[web]
+ address = ":8080"
+
+[api]
+ entryPoint = "traefik"
+ dashboard = true
+ debug = true
+
+[ping]
+ entryPoint = "traefik"
+
+[metrics]
+ [metrics.statistics]
+    recentErrors = 10
+
+[consul]
+ endpoint = "IP_CONSUL_SERVER:8500"
+ watch = true
+ prefix = "traefik"
+
+[traefikLog] 
+  filePath = "/opt/traefik-consul/traefik/log/traefik.log"
+
+[accessLog]
+  filePath = "/opt/traefik-consul/traefik/log/access.log"
